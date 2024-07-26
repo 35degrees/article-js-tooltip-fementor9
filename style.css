@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--dark-grey-blue: hsl(217, 19%, 35%);
+	--desat-dark-blue: hsl(214, 17%, 51%);
+	--grey-blue: #9eafc2;
+	--light-grey-blue: hsl(210, 46%, 95%);
+	--cream-primary: hsl(30, 38%, 92%);
+	--stone-150: hsl(30, 18%, 87%);
+}
+
+body {
+	font-family: 'Manrope', sans-serif;
+	font-size: 13px;
+	background-color: var(--stone-150);
+}
+
+img {
+	width: 100%;
+}
+
+.container {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 40% 60%;
+	gap: 0.4rem;
+	width: 550px;
+	height: 250px;
+	background-color: var(--cream-primary);
+	/* border: 1px solid dodgerblue; */
+	box-shadow: 5px 5px 9px -3px rgba(41, 32, 32, 0.3);
+	border-radius: 8px;
+}
+
+.header-image {
+	background: url('images/drawers.jpg') center left/cover no-repeat;
+	border-radius: 8px 0 0 8px;
+}
+
+.header-content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 0.8rem 0.8rem 0 0.4rem;
+}
+.header-content .headline {
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 0.5rem 0.8rem 0.2rem 0.8rem;
+	color: var(--dark-grey-blue);
+}
+
+.header-content .article {
+	font-size: 0.7rem;
+	line-height: 1.6;
+	color: var(--dark-grey-blue);
+	opacity: 0.9;
+	padding: 0rem 0.8rem 0.2rem 0.8rem;
+	text-wrap: pretty;
+	/* border: 1px dotted red; */
+}
+
+.flex-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 0.2rem;
+	padding: 0 0.8rem;
+	/* border: 1px dotted green; */
+}
+
+.flex-person {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.flex-name {
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: var(--dark-grey-blue);
+}
+.flex-text {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+.flex-date {
+	font-size: 0.7rem;
+	color: var(--desat-dark-blue);
+}
+.flex-image img {
+	width: 50px;
+	border-radius: 50%;
+	border: 3px solid #9eafc252;
+}
+
+.flex-share {
+	width: 40px;
+	height: 40px;
+	position: relative;
+	z-index: 19;
+	cursor: pointer;
+}
+
+.flex-share svg {
+	/* width: 40px;
+	height: 40px; */
+	transform: translate(19%, 19%);
+}
+/* .svg {
+	transform: translate(32%, 32%);
+} */
+
+/* .flex-share img {
+	filter: invert(0.5);
+} */
+
+svg:hover {
+	fill: var(--cream-primary);
+}
+
+.flex-share::before {
+	content: '';
+	height: 40px;
+	width: 40px;
+	background: rgba(70, 131, 180, 0.25);
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* transform: translate(-22%, -22%); */
+	border-radius: 50%;
+}
+
+@media (max-width: 650px) {
+	.grid-container {
+		grid-template-columns: 1fr;
+		grid-template-rows: 42% 58%;
+		width: 300px;
+		height: 430px;
+	}
+	.header-content {
+		padding: 0.3rem 0.5rem 0 0.5rem;
+	}
+	.flex-footer {
+		margin-top: 0.5rem;
+	}
+	.header-image {
+		border-radius: 8px 8px 0 0;
+	}
+}
